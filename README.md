@@ -14,7 +14,7 @@ Problems solved (updated everyday ... kinda)
    - For e.g.: If arr = [7,1,3,5,6,4], bestProfit is 5 (day 2 buy, day 5 sell)
      - then currentMin is first element of array initially, then once we find a number lesser than that, change it to that number. Start loop from index 1, Carry out the        prices[i] - currentMin and calc bestProfit.
  
- ### 2. Valid Parentheses - Leetcode 20
+### 2. Valid Parentheses - Leetcode 20
    - Stack question (not intuitive from the get go)
    - Notice that the string must start from an opening bracket. 
    - Once an opening bracket is encoutered, the validity check will keep on going, until it finally encounters a closing one, then it needs to validate:
@@ -22,3 +22,12 @@ Problems solved (updated everyday ... kinda)
      - compare TOS with current closing bracket, return false if not matching
    - Time: O(n) | Space: O(1) , well we needed a hashmap to store the bracket_map
    
+### 3. Reverse a linked list - Leetcode 206
+  - 3 pointers needed: previous, current and next: none, head, none
+  - while current is not empty, these steps need to be followed:
+    - next is current->next
+    - reversing logic aka current->next = previous
+    - now shifting the pointers: previous = current, current = next
+    - After first iteration, the llist becomes something like: 1 -> 2 -> 3 -> 4 -> x
+                                                                    p    n,c
+                                                                    
