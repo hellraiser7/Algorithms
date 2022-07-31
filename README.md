@@ -29,4 +29,13 @@ Problems solved (updated everyday ... kinda)
     - reversing logic aka current->next = previous
     - now shifting the pointers: previous = current, current = next
     - After first iteration, the llist becomes something like: 1 -> 2 -> 3 -> 4 -> x  (prev at 2, next,current at 3)
-                                                                    
+### 4. Merge two sorted linked lists - Leetcode 21
+  - 3 pointers again: current, A and B. A and B point to the next elements (from first and second llist) that need to be compared in order to find the next element in     the super linked list
+  - 2 components: get the starting node, depending on whichever is smaller (A.head or B.head) and assign current to it, either inc A or B
+  - Below is a rough sketch of the dry run that I'd conducted
+  ![merge_two_sorted_lists_21](https://user-images.githubusercontent.com/51331982/182046844-3f7f5ed7-17af-4764-b4ac-f7f5cbe690b4.jpg)
+  - A is smaller, so inc A.
+    - A is at 3, B at 2, so current points to B, and current shifts to B before B=B->next happens
+    - Similarly, in the next itr, A at 3 compared to B at 4 now. And A is smaller, so current points to A, shifts to A before A = A.next happens
+    - Any one of those 2 llists is empty, then we break and connect the current pointer to the list that's not empty. 
+  - Time: O(m+n) | Space: O(1) 
