@@ -25,9 +25,8 @@ Problems solved (updated everyday ... kinda)
 ### 3. Reverse a linked list - Leetcode 206
   - 3 pointers needed: previous, current and next: none, head, none
   - while current is not empty, these steps need to be followed:
-    - next is current->next
+    - next is current->next since we need to save nextNode first before manipulating pointers OW the next element is lost
     - reversing logic aka current->next = previous
     - now shifting the pointers: previous = current, current = next
-    - After first iteration, the llist becomes something like: 1 -> 2 -> 3 -> 4 -> x
-                                                                    p    n,c
+    - After first iteration, the llist becomes something like: 1 -> 2 -> 3 -> 4 -> x  (prev at 2, next,current at 3)
                                                                     
