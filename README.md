@@ -46,3 +46,9 @@ Problems solved (updated everyday ... kinda)
   - If at any time, we encounter a nodeAddress already existing within the set (next ptr pointing towards this node), we know that it contains a cycle
   - No other corner case.
   - Time: O(n) | Space: O(n)
+ 
+### 6. Invert Binary Tree - Leetcode 226
+  - Simple recursion, although I need to keep revising in order to stand a chance at understanding complex recursion problems
+  - At the root, go left and go right, swap the children and recurse on both halves of the tree. Return root
+  - Time: O(n) where n is the number of nodes in the tree
+
