@@ -39,3 +39,10 @@ Problems solved (updated everyday ... kinda)
     - Similarly, in the next itr, A at 3 compared to B at 4 now. And A is smaller, so current points to A, shifts to A before A = A.next happens
     - Any one of those 2 llists is empty, then we break and connect the current pointer to the list that's not empty. 
   - Time: O(m+n) | Space: O(1) 
+
+### 5. Linked List Cycle - Leetcode 141
+  - Probably the simplest of the lot.
+  - Iterate through the entire llist, and store the nodeAddresses inside a set.
+  - If at any time, we encounter a nodeAddress already existing within the set (next ptr pointing towards this node), we know that it contains a cycle
+  - No other corner case.
+  - Time: O(n) | Space: O(n)
