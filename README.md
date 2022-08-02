@@ -61,3 +61,11 @@ Problems solved (updated everyday ... kinda)
   - A dry run of the recursion: 
   ![max_Depth_binary_tree_104](https://user-images.githubusercontent.com/51331982/182285190-7920cbc4-252f-4c3e-8600-a9a1bce08558.jpg)
 
+### 8. Same Tree - Leetcode 100
+  - Simple Recursion
+  - Equality of nodes will exist when:
+    - p.val == q.val and none of them is empty, in which case we put the recursion call of sametree(p.left,q.left) and sametree(p.right, q.right)
+    - Both p and q are none, hence they are equal
+  - Unequality:
+    - One of p or q is None
+    - If both p and q have non empty vals, p.val != q.val
