@@ -52,3 +52,12 @@ Problems solved (updated everyday ... kinda)
   - At the root, go left and go right, swap the children and recurse on both halves of the tree. Return root
   - Time: O(n) where n is the number of nodes in the tree
 
+### 7. Maximum Depth Binary Tree - Leetcode 104
+  - Simple recursion
+  - Check if root exists, if it does, add 1 to the max depth from both left and right halves 
+    - return (1+max(maxDepth(root.left),maxDepth(root.right)))
+    - else return 0 depth
+  - Time: O(n) where n is the number of nodes in the tree
+  - A dry run of the recursion: 
+  ![max_Depth_binary_tree_104](https://user-images.githubusercontent.com/51331982/182285190-7920cbc4-252f-4c3e-8600-a9a1bce08558.jpg)
+
