@@ -69,3 +69,10 @@ Problems solved (updated everyday ... kinda)
   - Unequality:
     - One of p or q is None
     - If both p and q have non empty vals, p.val != q.val
+
+### 9. Subtree of another tree - Leetcode 572
+  - Not so simple, but depends on the previous problem
+  - Use same tree logic
+  - Check for each node of the main tree, if it's equal to the subtree
+  - The same process for checking SameTree continues, the only difference being that this happens for every node
+  - Time: O(T) | Space: O(1) where T = number of nodes in the subtree
