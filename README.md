@@ -76,3 +76,5 @@ Problems solved (updated everyday ... kinda)
   - Check for each node of the main tree, if it's equal to the subtree
   - The same process for checking SameTree continues, the only difference being that this happens for every node
   - Time: O(T) | Space: O(1) where T = number of nodes in the subtree
+
+### 10. Lowest Ancestor of a Binary Search Tree - Leetcode 235
