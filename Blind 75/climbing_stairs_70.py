@@ -15,6 +15,12 @@ def climbStairsDP(n):
         T[i] = T[i-1] + T[i-2]
     return T[n]
 
+def climbingStairsUtil(n):
+    #base
+    if (n <= 3):
+        return n
+    return climbingStairsUtil(n-1) + climbingStairsUtil(n-2)
+    
 if __name__ == "__main__":
     n = 6
     print(climbStairsDP(n))
