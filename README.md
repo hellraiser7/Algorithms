@@ -91,3 +91,10 @@ Problems solved (updated everyday ... kinda)
   - See a pattern emerging.
   - Can be solved dynamically or recursively
   - Time: O(n) | Space: O(n) for iterative approach, O(1) for recursive
+
+### 12. Meeting Rooms - Lintcode 920
+  - This is a premium leetcode question. Since I am poor, gonna do it in lintcode instead (free site)
+  - Sort by start times since we need the end time perspectives here.
+  - We can attend the meetings if end time of one meeting is smaller or equal to the start time of the next meeting, after sorting.
+  - Time: O(nlogn + n) = O(nlogn) since sorting takes nlogn time and then the pass through the intervals array | Space: O(1)
+  - e<sub>i</sub> <= s<sub>i+1</sub>
