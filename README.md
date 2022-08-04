@@ -78,3 +78,11 @@ Problems solved (updated everyday ... kinda)
   - Time: O(T) | Space: O(1) where T = number of nodes in the subtree
 
 ### 10. Lowest Ancestor of a Binary Search Tree - Leetcode 235
+  - Use the concept of a binary tree in order to lower the time complexity.
+  - Can use both iterative as well as recursive solutions
+  - LCA cases: 
+    - If anywhere, p and q are in the opposite sides of a tree, then the root will be the LCA ( one is greater than root, the other is lesser), return root in this case
+    - If both are smaller or greater than the root, then we recurse towards either the left half of tree or right, since it is a BST (2 if statements: if p.val > root.val and q.val > root.val -> return LCA(root.right, p,q), and the other one for handling the smaller than root case, where we go left
+    - Time: O(1) with iterative approach, can go upto O(n) in recursion due to the stack | O(1) space
+    
+    -
