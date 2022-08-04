@@ -86,3 +86,8 @@ Problems solved (updated everyday ... kinda)
     - Time: O(1) with iterative approach, can go upto O(n) in recursion due to the stack | O(1) space
     
     ![LCA](https://user-images.githubusercontent.com/51331982/182887723-76f820e5-87da-4145-9894-56d7c9be3bce.jpeg)
+### 11. Climbing Stairs - Leetcode 70
+  - Calculate recurrence relation first. Start with 1 step, 2 steps then 3
+  - See a pattern emerging.
+  - Can be solved dynamically or recursively
+  - Time: O(n) | Space: O(n) for iterative approach, O(1) for recursive
