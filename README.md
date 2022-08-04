@@ -85,4 +85,4 @@ Problems solved (updated everyday ... kinda)
     - If both are smaller or greater than the root, then we recurse towards either the left half of tree or right, since it is a BST (2 if statements: if p.val > root.val and q.val > root.val -> return LCA(root.right, p,q), and the other one for handling the smaller than root case, where we go left
     - Time: O(1) with iterative approach, can go upto O(n) in recursion due to the stack | O(1) space
     
-    -
+    ![LCA](https://user-images.githubusercontent.com/51331982/182887723-76f820e5-87da-4145-9894-56d7c9be3bce.jpeg)
