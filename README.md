@@ -98,3 +98,10 @@ Problems solved (updated everyday ... kinda)
   - We can attend the meetings if end time of one meeting is smaller or equal to the start time of the next meeting, after sorting.
   - Time: O(nlogn + n) = O(nlogn) since sorting takes nlogn time and then the pass through the intervals array | Space: O(1)
   - e<sub>i</sub> <= s<sub>i+1</sub>
+### 13. Number of 1 Bits - Leetcode 191
+  - While n is not zero, do modulus with 2, to get the MSB. (Modulus with 2 means getting whether the current number is odd or even, so we get the MSB)
+  - If MSB == 1, then inc sum, and right shift n.
+  - Genius approach would be to do n = n & (n-1) since this reduces the Time complexity to only have no.of iterations = no. of set bits. 
+  - As we do & with previous number, we eliminate each set bit one by one. So, if there are only a few, it helps us rather than go all the way 32 times.
+  - Do a DRY again!
+  - Time: O(32) or less | O(1) Space
