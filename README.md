@@ -105,3 +105,31 @@ Problems solved (updated everyday ... kinda)
   - As we do & with previous number, we eliminate each set bit one by one. So, if there are only a few, it helps us rather than go all the way 32 times.
   - Do a DRY again!
   - Time: O(32) or less | O(1) Space
+### 14. Counting bits - Leetcode 338
+  - Use the same above logic, for each n, do getSetBits as done above
+  - Or we can do it in one pass, without the extra O(32) going inside the for loop
+    - in one pass, keep a dp table with n entries of zeros first. then keep on appending it. Dividing by 2 is equivalent to right shifting
+    - ans[i] = ans[i//2] + i%2
+    - Get the MSB bit whether 1 or 0, then get the no. of set bits value from the number without the MSB, which is the right shifted value
+  - Time: <O(32) | Space: O(1)
+
+### 15. Reverse Bits  - Leetcode 190
+  - Can convert int to binary first, starting from 2nd index since the number will be "0b1011..."
+    - Reverse the binary string, then if length of that reversed string is lesser than 32, add zeros at the end to fill it up till length of 32
+    - Time: O(n) for reversing or slightly lesser due to python being python | Space: O(1)
+  - Can also do modulus with 2, get the MSB and push it into a new string. Then right shift the number by 1, continue till it becomes zero
+  - Handle the 32 length scenario as mentioned above, and thats about it
+  - Time: O(n) | Space: O(n)
+
+### 16. Missing Number - Leetcode 268
+  - Sort the array in ascending order.
+    - check if there's an arr[i] != i, return that i
+    - no false returns, always a happy solution exists
+    - This is O(nlogn) time, O(1) space. We can do better
+  - To do better, we can calculate the natural number sum till the length of array nums *n* = n(n+1)/2
+    - Calculate the actual sum of elements, and then subtract both to get the missing number
+    - Sweet, ain't it? 
+    - (I'm seriously bragging about finding this solution on my own lol)
+    - This gets us Time: O(n), Space: O(1). In python, the sum(nums) method can be lesser than O(n)
+  
+  
