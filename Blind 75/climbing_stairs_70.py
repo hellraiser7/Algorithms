@@ -23,5 +23,7 @@ def climbingStairsUtil(n):
     
 if __name__ == "__main__":
     n = 6
-    print(climbStairsDP(n))
+    print("DP solution: ", climbStairsDP(n))
+    print("Recursive Solution: ", climbingStairsUtil(n))
+    
 
