@@ -131,5 +131,21 @@ Problems solved (updated everyday ... kinda)
     - Sweet, ain't it? 
     - (I'm seriously bragging about finding this solution on my own lol)
     - This gets us Time: O(n), Space: O(1). In python, the sum(nums) method can be lesser than O(n)
-  
-  
+
+### Medium Leetcode
+
+### 17. Group Anagrams - Leetcode 49
+  - Think how to calculate all permutations of a string
+  - Calculate them for one string, then check if other strings exist in that permutations list
+  - Not necessarily a solution we can code, since it gets to exponential.
+   - One thing we can do is sort each string inside the array first, and check how many of them are equal after all the elements are sorted
+   - In place sorting could be done
+   - Push into a new output list of lists
+   - Time: O(m.nlogn) if m = length of array, n = length of each string | Space: O(m) 
+  - Optimized solution:
+   - Use a hashmap!!
+   - Keep a list arr = [0]*26 for the 26 alphabets
+   - For each element in the input, and for each char in each str, calculate the frequency of each char
+   - then append into defaultdict with the tuple as key. If keys are same (anagrams), the values will get clubbed into an array
+   - Time: O(26mn) = O(mn) since 26 is constant | Space: O(26) only a list for alphabet frequency counting is needed
+   
