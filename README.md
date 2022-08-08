@@ -148,4 +148,5 @@ Problems solved (updated everyday ... kinda)
    - For each element in the input, and for each char in each str, calculate the frequency of each char
    - then append into defaultdict with the tuple as key. If keys are same (anagrams), the values will get clubbed into an array
    - Time: O(26mn) = O(mn) since 26 is constant | Space: O(26) only a list for alphabet frequency counting is needed
+   - For e.g: string 'abe'  will have the countArray = [1,1,0,0,1,0,0 ... 0] 26 values. It keeps count of frequency of each char in its respective position. 1st pos for a, 26th pos for z
    
