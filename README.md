@@ -156,3 +156,9 @@ Problems solved (updated everyday ... kinda)
     - iterate through the sorted list and only return first k element array once all k elements have been encountered
     - Time: O(nlogn) | Space: O(k) since we need to store the k frequent elements in a new array and return it
   - Second solution: Hashmap? Everything boils down to a hashmap. The solution for world hunger is probably a hashmap.
+    - Get the frequencies in a hashmap (key as array element, value as its frequency)
+    - iterate from 0 to k (k frequent)
+    - for each pass, go through the hashmap and find the key for which we get max value.
+    - Then delete that key from hashmap, and store the corresponding array element with max frequency in a new result array
+    - return the new array which will acquire O(k) space
+    - Time: O(n + k*no.ofunique array elements) ~ O(n + k^2) lesser than nlogn | Space: O(k) for the resultant array
