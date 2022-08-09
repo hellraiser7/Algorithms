@@ -149,4 +149,10 @@ Problems solved (updated everyday ... kinda)
    - then append into defaultdict with the tuple as key (since the key needs to be immutable). If keys are same (anagrams), the values will get clubbed into an array
    - Time: O(26mn) = O(mn) since 26 is constant | Space: O(26) only a list for alphabet frequency counting is needed
    - For e.g: string 'abe'  will have the countArray = [1,1,0,0,1,0,0 ... 0] 26 values. It keeps count of frequency of each char in its respective position. 1st pos for a, 26th pos for z
-   
+
+### 18. Top K Frequent Elements - Leetcode 347
+  - First solution: sort the array with respect to count of elements (use sorted function, with key = list.count, reverse = true)
+    - We get the list sorted wrt decreasing frequency
+    - iterate through the sorted list and only return first k element array once all k elements have been encountered
+    - Time: O(nlogn) | Space: O(k) since we need to store the k frequent elements in a new array and return it
+  - Second solution: Hashmap? Everything boils down to a hashmap. The solution for world hunger is probably a hashmap.
