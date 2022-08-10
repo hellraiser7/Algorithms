@@ -162,3 +162,11 @@ Problems solved (updated everyday ... kinda)
     - Then delete that key from hashmap, and store the corresponding array element with max frequency in a new result array
     - return the new array which will acquire O(k) space
     - Time: O(n + k*no.ofunique array elements) ~ O(n + k^2) lesser than nlogn | Space: O(k) for the resultant array
+
+### 19. Product of Array but itself - Leetcode 238
+  - First solution: can use division. Calculate product of all elements, and then divide by the current element to get the product in output array for current pos
+    - Handle edge cases first before moving on to main logic: 1 zero means only one nonzero element in output in pos where zero is located, more than one zero means a zeroes list is returned
+    - Time: O(n) | Space: O(n) for output array, but uses division
+    - Need a solution without using division
+    
+    
