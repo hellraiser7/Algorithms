@@ -168,4 +168,4 @@ Problems solved (updated everyday ... kinda)
     - Handle edge cases first before moving on to main logic: 1 zero means only one nonzero element in output in pos where zero is located, more than one zero means a zeroes list is returned
     - Time: O(n) | Space: O(n) for output array, but uses division
     - Need a solution without using division
-  - Maybe iterating, popping the element, calculating the product, and then pushing it back in? TLE for this one.
+  - Maybe iterating, popping the element, calculating the product, and then pushing it back in? TLE for this one. amazon?
