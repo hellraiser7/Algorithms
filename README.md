@@ -168,4 +168,7 @@ Problems solved (updated everyday ... kinda)
     - Handle edge cases first before moving on to main logic: 1 zero means only one nonzero element in output in pos where zero is located, more than one zero means a zeroes list is returned
     - Time: O(n) | Space: O(n) for output array, but uses division
     - Need a solution without using division
-  - Maybe iterating, popping the element, calculating the product, and then pushing it back in? TLE for this one. amazon?
+  - Maybe iterating, popping the element, calculating the product, and then pushing it back in? TLE for this one.
+    - The second solution: It's absolutely ridiculous. How is someone supposed to come up with this solution by himself in an interview?
+    - The only way you can solve this in your interview would be the fact that you'd have solved this before. I cannot understand how this is supposed to measure a candidate's ability to work in a company. Absolutely shit shit thing.
+    
