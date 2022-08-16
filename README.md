@@ -172,4 +172,6 @@ Problems solved (updated everyday ... kinda)
     - Use prefix and postfix values in order to calculate the thing without division.
     - See out prefix product for every element, then calc postfix product (product of everything after that element) for the elements
     - First use prefix & postfix arrays, so space will be O(2n), then try eliminating the use of these arrays to limit space to O(1), ofcourse output array doesnt count towards space complexity.
-    
+
+### 20. Encode and Decode strings - Lintcode 659
+  - Another premium question - encode a list of strings to a string
