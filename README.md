@@ -175,4 +175,10 @@ Problems solved (updated everyday ... kinda)
 
 ### 20. Encode and Decode strings - Lintcode 659
   - Another premium question - encode a list of strings to a string
-  - Take premium pls
+  - Use a delimiter along with the length of each individual string in order to store the list of strings into a string
+  - So, ["we","love","lintcode"] => "2$we4$love8$lintcode" => ["we","love","lintcode"]
+  - encoding is easy: append length of string and delimiter (any special character really, or anything else, covers all corner cases) to resultant string and return
+  - decoding: use 2 pointers i and j. i for the outer loop, j to keep going in the inner one, till it encounters the "$", then get that char length, and append that char which will occur from str[i:j] since j+1 would be at "$". Then reinitialize i to next char start (j+1+length of current), and j = i, to start over
+  - Time: O(n) for encoding, O(number_of_digits_in_length_integer * n) for decoding, where n = list of strings length
+    - This is just an instance. If there are 200 chars in every string, there'll be 3 digits to traverse for inner loop, and times that of length of the list (say 200) which becomes O(3*200)
+    - So in short, total design algorithm's time: O(n + l * n) ~ O(n)
