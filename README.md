@@ -169,8 +169,6 @@ Problems solved (updated everyday ... kinda)
     - Time: O(n) | Space: O(n) for output array, but uses division
     - Need a solution without using division
   - Maybe iterating, popping the element, calculating the product, and then pushing it back in? TLE for this one.
-    - The second solution: It's absolutely ridiculous. How is someone supposed to come up with this solution by himself in an interview?
-    - The only way you can solve this in your interview would be the fact that you'd have solved this before. I cannot understand how this is supposed to measure a candidate's ability to work in a company. Absolutely shit shit thing.
     - Use prefix and postfix values in order to calculate the thing without division.
     - See out prefix product for every element, then calc postfix product (product of everything after that element) for the elements
     - First use prefix & postfix arrays, so space will be O(2n), then try eliminating the use of these arrays to limit space to O(1), ofcourse output array doesnt count towards space complexity.
