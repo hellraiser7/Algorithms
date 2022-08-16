@@ -175,3 +175,4 @@ Problems solved (updated everyday ... kinda)
 
 ### 20. Encode and Decode strings - Lintcode 659
   - Another premium question - encode a list of strings to a string
+  - Take premium pls
