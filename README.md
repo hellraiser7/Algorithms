@@ -184,3 +184,17 @@ Problems solved (updated everyday ... kinda)
     - So in short, total design algorithm's time: O(n + l * n) ~ O(n)
 
 ### 21. Longest Consecutive Sequence - Leetcode 128
+  - First solution: 
+    - Sort the array
+    - Once sorted, you can convert into set, reconvert to list to remove duplicate elements
+    - Then iterate through entire unique list till penultimate
+    - If numsSet[i+1]  == numsSet[i] + 1 (consecutive ones), then increment result
+    - else, compare maxValues and store the latest max, reinitialize output to 1 for next sequence
+    - Time: O(nlogn) | Space: O(n) or O(1) depending on whether we use a stack or not for maxValues
+  - Second solution:
+    - create a set from the list
+    - Iterate through the numsSet
+    - check if the current element is the starting of a sequence, (if ele - 1 not in numsSet), initialize length as 0
+    - while loop inside for to go till the end of consecutive elements present in the set while ele + length in numsSet, do inc length
+    - do maximum of local length and the maxValue
+    - Time: O(n), Space: O(n) since we used a numsSet
