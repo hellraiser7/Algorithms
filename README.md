@@ -182,3 +182,5 @@ Problems solved (updated everyday ... kinda)
   - Time: O(n) for encoding, O(number_of_digits_in_length_integer * n) for decoding, where n = list of strings length
     - This is just an instance. If there are 200 chars in every string, there'll be 3 digits to traverse for inner loop, and times that of length of the list (say 200) which becomes O(3*200)
     - So in short, total design algorithm's time: O(n + l * n) ~ O(n)
+
+### 21. Longest Consecutive Sequence - Leetcode 128
