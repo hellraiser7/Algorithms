@@ -198,3 +198,6 @@ Problems solved (updated everyday ... kinda)
     - while loop inside for to go till the end of consecutive elements present in the set while ele + length in numsSet, do inc length
     - do maximum of local length and the maxValue
     - Time: O(n), Space: O(n) since we used a numsSet
+
+### 22. 3Sum - Leetcode 15
+  - 
