@@ -200,4 +200,16 @@ Problems solved (updated everyday ... kinda)
     - Time: O(n), Space: O(n) since we used a numsSet
 
 ### 22. 3Sum - Leetcode 15
-  - 
+  - First solution:
+    - Brute Force tells us that we can check all possible triplets and then check how many of them add up to 0. We can even add checks for duplicates. This is an O(n^3) time solution.
+  - Second solution:
+    - Sort in ascending order.
+    - Driving inspiration from 2 sum II. Please solve that first while revising.
+    - Fix the first number, and then using left and right pointers, calculate the next two numbers in the candidate triplet. So, we'll need one main loop, inside which there must be a while loop to check while left < right
+    - if threesum < 0 , increment left pointer, since the list is sorted, and once we increment, the sum will be bigger, and much closer to 0 than previously done
+    - if threesum > 0, we've gone too far with the sum, hence right ptr needs to be decremented to get closer to the zero sum
+    - if == 0, we got it. append triplet in output and another while is needed
+    - left pointer needs to be incremented here, and a last **while** is needed since we can encounter duplicates in the left pointer too. In order to not go through the same left pointer again and again, we'll keep incrementing left pointer till we get a different number.
+    - Once we increment left pointer and get a different number, we go through the logic again, and we see that the right ptr decrement will be taken care of in the next iterations, so only need to take care of left ptr
+    - Revise again!!!!
+    - Time: O(nlogn + n^2) since we go through the list at most twice with two loops, one outer one and other while l<r one. Space: O(1) since we use l and r ptrs.
