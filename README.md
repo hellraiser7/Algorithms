@@ -213,3 +213,15 @@ Problems solved (updated everyday ... kinda)
     - Once we increment left pointer and get a different number, we go through the logic again, and we see that the right ptr decrement will be taken care of in the next iterations, so only need to take care of left ptr
     - Revise again!!!!
     - Time: O(nlogn + n^2) since we go through the list at most twice with two loops, one outer one and other while l<r one. Space: O(1) since we use l and r ptrs.
+
+### 23. Container with most water - Leetcode 11
+  - First Solution:
+    - Brute Force: Run two loops to find the candidate vertical pairs. One of them will give max Area, keep tracking this maxArea and return
+      - O(n^2) time, O(1) space, gives TLE
+  - Second solution: 
+    - Two pointers again, but we need to get the logic as to how to increment/decrement those pointers
+    - while left < right, get the current area with current l and r ptrs. Then if height at left ptr is smaller than that of right, increment left pointer since we need a bigger height in order to maximize area
+    - We might/might not get a bigger height once we inc/dec, but still we need to keep checking like this throughout the list.
+    - similarly, if height at right ptr is smaller, decrement right ptr.
+    - keep track of maxArea.
+    - Time: O(n) | Space: O(1)
