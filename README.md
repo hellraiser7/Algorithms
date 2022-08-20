@@ -237,3 +237,5 @@ Problems solved (updated everyday ... kinda)
     - if the current char is not in hashset, add into set outside while loop
     - Time: O(n) since lookup time in set is O(1), worst case scenario would be O(2n) when there is a repeating char at end of string "abcdefghijklmnpp", then left ptr needs to go all the way towards the end, so twice traversal needed
     - Space: O(n) for hashset 
+
+### 25. Longest Repeating Character Replacement - Leetcode 424
