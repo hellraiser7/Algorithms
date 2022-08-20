@@ -251,6 +251,8 @@ Problems solved (updated everyday ... kinda)
   - Second solution:
     - No need for the hashmap. Only need to keep track of maxFrequency and have some good logic on that.
     - Cannot come up with this in an interview. It's not possible. But good to know still.
-    Here is the dry run for the example "AABABBA", k = 2
+    Here is the dry run for the example "AABABBA",k=2
+    
+    
   ![image](https://user-images.githubusercontent.com/51331982/185768360-4cd69097-183f-45e4-8873-0d29fabe626a.png)
 
