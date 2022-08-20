@@ -239,3 +239,15 @@ Problems solved (updated everyday ... kinda)
     - Space: O(n) for hashset 
 
 ### 25. Longest Repeating Character Replacement - Leetcode 424
+  - First Solution:
+    - Sliding window using a hashmap for storing count of each uppercase character.
+    - Need to calculate maximum frequency in current window defined by left and right ptrs as done in above questions
+    - condition length_of_current_substring - maxFrequncy <= k, needs to be satisfied in order to find out whether the other chars in the current window can be replaced or not
+    - If that number is lesser or equal to k, it means that all of the other characters can be replaced as k is the upper limit given.
+    - If not equal, then we need to slide the left ptr one step ahead since the window will not be valid then. 
+    - Shift the left ptr, decrement the count of the char where the left ptr was sitting, and do the procedure again.
+    - Keep going till the end of the list
+    - Time: O(26.n) | Space: O(26) for the alphabet hashmap
+  - Second solution:
+    - No need for the hashmap. Only need to keep track of maxFrequency and have some good logic on that.
+    - Cannot come up with this in an interview. It's not possible. But good to know still.
