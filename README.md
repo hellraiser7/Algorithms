@@ -225,3 +225,8 @@ Problems solved (updated everyday ... kinda)
     - similarly, if height at right ptr is smaller, decrement right ptr.
     - keep track of maxArea.
     - Time: O(n) | Space: O(1)
+
+### 24. Longest Substring Without Repeating Characters - Leetcode 3
+  - First Solution:
+    - Brute Force O(n^2). Find all possible substrings and then check if they have repeating characters. Keep tracking maxLength and return it. It may go towards O(n^3)
+    
