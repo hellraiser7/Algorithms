@@ -229,4 +229,11 @@ Problems solved (updated everyday ... kinda)
 ### 24. Longest Substring Without Repeating Characters - Leetcode 3
   - First Solution:
     - Brute Force O(n^2). Find all possible substrings and then check if they have repeating characters. Keep tracking maxLength and return it. It may go towards O(n^3)
-    
+  - Second Solution:
+    - Sliding Window with left and right
+    - Use a set to keep the substring characters that have been encountered till current itr.
+    - while inside a for loop, while loop to keep incrementing left pointer until we have eliminated the repeating character(s) out of the set so that we can start with the fresh substring with a fresh hashset collection and l & r ptrs
+    - we keep inc. left pointer, and also removing that char at which left ptr sits, from the set, since we need to keep updating the substring window (window changes, and so does the set)
+    - if the current char is not in hashset, add into set outside while loop
+    - Time: O(n) since lookup time in set is O(1), worst case scenario would be O(2n) when there is a repeating char at end of string "abcdefghijklmnpp", then left ptr needs to go all the way towards the end, so twice traversal needed
+    - Space: O(n) for hashset 
