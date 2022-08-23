@@ -257,3 +257,5 @@ Problems solved (updated everyday ... kinda)
   ![image](https://user-images.githubusercontent.com/51331982/185768360-4cd69097-183f-45e4-8873-0d29fabe626a.png)
 
 ### 26. Search in Rotated Sorted Array - Leetcode 33
+  - First solution: O(n) trivial since we need to match every number in list with target and return the index
+  - Second solution: Need O(logn) solution which would include a special type of binary search for rotated lists
