@@ -259,3 +259,6 @@ Problems solved (updated everyday ... kinda)
 ### 26. Search in Rotated Sorted Array - Leetcode 33
   - First solution: O(n) trivial since we need to match every number in list with target and return the index
   - Second solution: Need O(logn) solution which would include a special type of binary search for rotated lists
+
+### 27. Reorder List - Leetcode 143
+  - L0 -> Ln -> L1 -> Ln-1 ...
