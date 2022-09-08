@@ -262,3 +262,8 @@ Problems solved (updated everyday ... kinda)
 
 ### 27. Reorder List - Leetcode 143
   - L0 -> Ln -> L1 -> Ln-1 ...
+  - First Solution:
+    - Two pointer approach perhaps? two heads. First make pairs like L0 -> Ln , L1 -> Ln-1, ...
+    - And then joining all of them. If for the last one, there is no pair, then it will be just a single number/node
+    - Let's try this first
+    
