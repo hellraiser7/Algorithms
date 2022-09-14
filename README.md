@@ -267,3 +267,8 @@ Problems solved (updated everyday ... kinda)
     - And then joining all of them. If for the last one, there is no pair, then it will be just a single number/node
     - Let's try this first
     
+### 28. Binary Tree Level Order Traversal - Leetcode 102
+  - Use queue
+  - while queue is empty: level array for each level nodes, run a for loop inside while towards length of queue, and then popleft -> append left and right sibling in level
+  - append whole level in result outside for
+  - Time: O(n) | Space: O(n) for the queue length (n/2 at any stage max)
