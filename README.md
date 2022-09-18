@@ -272,3 +272,6 @@ Problems solved (updated everyday ... kinda)
   - while queue is empty: level array for each level nodes, run a for loop inside while towards length of queue, and then popleft -> append left and right sibling in level
   - append whole level in result outside for
   - Time: O(n) | Space: O(n) for the queue length (n/2 at any stage max)
+
+### 29. Validate BST - Leetcode 98
+  - Recursion
