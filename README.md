@@ -275,3 +275,11 @@ Problems solved (updated everyday ... kinda)
 
 ### 29. Validate BST - Leetcode 98
   - Recursion
+
+### 30. Number of Islands - Leetcode 200
+  - Long time no see
+  - DFS or BFS anything will do to calculate number of connected components
+  - Keep track of all visited squares in a separate visited matrix with all false initially
+  - Start traversal from any node if that node is land ("1"), and it is not already visited
+  - In the DFS_Util function, recurse for all four directions, check if the square indices are valid, and check visited status, and check if land or not, then recurse in all four directions (x+1, y) which is right, (x-1,y) left, (x,y+1) down, and (x, y-1) up. 
+  - TC: O(mn) | SC: O(mn). SC can be reduced if we keep a visited set instead of a matrix. Keep track of only the visited squares which are ones.
