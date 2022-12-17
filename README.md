@@ -293,3 +293,14 @@ Problems solved (updated everyday ... kinda)
   - And link in hashmap with OldToNew[node] = deepcopy
   - Then do DFS inside the aux function
   - TC: O(V+E) | SC: O(V+E) since we made a deep copy
+
+### 32. Pacific Atlantic Water Flow - Leetcode 417
+  - Cells that can flow towards both atlantic and pacific ocean
+  - The question isn't well explained in leetcode. Make sure you revise properly with the given example. It is almost similar to the DFS traversal done in 30th (LC 133) in that we have to traverse in all four directions, and check for validity of the cell
+  - Calling the DFS_Util function with args row, column, visited, previousHeight, 4 times - twice for top and bottom, twice for left and right, since we have two oceans
+  - Iterate a row-wise for loop through columns of heights, call DFS_Util twice, to fill up both atlanticSet and pacificSet so that we get cells that flow to those oceans from top and bottom
+  - Iterate a col-wise for loop, call DFS_Util twice, so that we get cells that can flow towards ATL and PAC oceans from left and right now. 
+  - Take the intersection of the two sets because we need cells that can have water that flows to both the oceans, and not just one.
+  - TC: O(mn) | SC: O(mn) due to pac and atlSet, TC is O(mn) due to visited set checks, so that it doesn't go deep in recursive stack
+
+### 33. Course Schedule - Leetcode 207
