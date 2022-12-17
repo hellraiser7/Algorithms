@@ -283,3 +283,13 @@ Problems solved (updated everyday ... kinda)
   - Start traversal from any node if that node is land ("1"), and it is not already visited
   - In the DFS_Util function, recurse for all four directions, check if the square indices are valid, and check visited status, and check if land or not, then recurse in all four directions (x+1, y) which is right, (x-1,y) left, (x,y+1) down, and (x, y-1) up. 
   - TC: O(mn) | SC: O(mn). SC can be reduced if we keep a visited set instead of a matrix. Keep track of only the visited squares which are ones.
+
+### 31. Clone Graph - Leetcode 133
+  - Deep Copy using DFS or BFS, anything will do
+  - We have used DFS here
+  - Need a hashmap to store all the nodes mapped from old to new (the deep copied ones)
+  - Check node in oldToNew hashmap, if there, return oldToNew[node]
+  - do Deepcopy = Node(node.val)
+  - And link in hashmap with OldToNew[node] = deepcopy
+  - Then do DFS inside the aux function
+  - TC: O(V+E) | SC: O(V+E) since we made a deep copy
