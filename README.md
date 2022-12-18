@@ -304,3 +304,10 @@ Problems solved (updated everyday ... kinda)
   - TC: O(mn) | SC: O(mn) due to pac and atlSet, TC is O(mn) due to visited set checks, so that it doesn't go deep in recursive stack
 
 ### 33. Course Schedule - Leetcode 207
+  - Detecting a cycle in a graph problem.
+  - Convert the list into a defaultdict first
+  - Use visited array length of numCourses, and currentPath array in order to store the visited nodes in the current DFS path
+  - Loop through the nodes from 0 to numCourses-1 and perform if not visited[currentNode]: if not DFS_Util(visited, graph, currentPath, currentNode)
+  - In DFS_Util, add in currentPath and make visited[currentNode] true, then loop through the neighbors and recurse.
+  - Returning false and true can be problematic, so need to keep practising such questions for cycle detection
+  - TC: O(V+E) | SC: O(V+E)
