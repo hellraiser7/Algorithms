@@ -311,3 +311,12 @@ Problems solved (updated everyday ... kinda)
   - In DFS_Util, add in currentPath and make visited[currentNode] true, then loop through the neighbors and recurse.
   - Returning false and true can be problematic, so need to keep practising such questions for cycle detection
   - TC: O(V+E) | SC: O(V+E)
+
+### 34. Number of Connected Components - Leetcode 323
+  - Premium leetcode
+  - Find number of CC, can be done using simple DFS. Count how many DFS processes are there, after every recursion backtracking is complete, increment the count of components
+  - Next solution is via Union and Find. Do revise it again.
+  - VVVV Important
+  - ![Graph Theory](https://user-images.githubusercontent.com/51331982/208521114-c81d073d-22dd-41b9-ab2e-fe566b970d4e.png)
+TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, also the visted array taken in first approach
+  
