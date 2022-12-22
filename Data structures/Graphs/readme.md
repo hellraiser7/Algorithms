@@ -28,3 +28,19 @@ low[currentNode] = min(low[currentNode], disc[neighbor]). We take disc[neighbor]
 9. Return SCC_componentsList from the main program.
 Below is the dry run and somewhat legible recursion tree for future reference. No need to dry run like this again. Just remember the main steps. Code isn't that heavy.
 ![Tarjan_recursion_tree](https://user-images.githubusercontent.com/51331982/208999715-c43b0ba7-6bf5-4b53-b3a1-1cc9ca499710.png)
+
+### Articulation Points using Tarjan's algorithm
+
+An AP is a node when removed from the graph, breaks the graph into multiple components (single point of failure in a network)
+
+Steps to find APs
+
+1. Maintain a parent[] array where parent[u] stores the parent of node u
+2. Do the same as tarjans, declare disc[], low[], timer = 0 initially and an APlist to store the nodes that are APs
+3. For each vertex, call the helper Util func, in the helper, low[curr] = timer = disc[timer], timer++, just like the tarjansSCC done above.
+4. No need for a visited set since we do not need a topological sorting order, just need to find the APs
+5. In helper, go through the neighbors of currentNode, if not yet discovered, inc no. of children by 1, then recurse for the neighbor
+6. After recursion statement, when DFS process backtracks, do the same as tarjanSCC. low[cur] = min(low[cur], low[neigh]) and check first case of AP: if currentNode is a root node (parent[curr] == -1) and it has two more children, if so, append in APList
+7. Second case: if currentNode is not root, and low[neighbor] >= disc[currentNode], it will be an AP. Meaning: we check for any backedges from subgraph v of u, towards ancestor of u. If there is one, that would mean the low value of neighbor will modify to something lower than disc value of its parent, hence the no. of components will not increase in that case, so to avoid backedge, the inequality is given. Append in APList if true
+8. In elif statement (same level as the first "if" check for undiscovered neighbor), check if theres no backedge from parent to neighbor. If neighbor happens to be immediate parent of currentNode, then we ignore that case because we assume to be removing the currentNode for checking AP. So the backedge to parent actually doesnt exist at the moment. So on true, do same as tarjansSCC point 6.
+9. Return APList from main program.
