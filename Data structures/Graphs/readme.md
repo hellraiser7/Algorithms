@@ -47,3 +47,18 @@ Steps to find APs
 10. Note: There can be duplicates in APList, since after backtracking from curr's children, it can hit the if statements again, like in the example given below. So use a set instead of APList. Or perhaps even better: Keep an AP boolean list = [F F F F ...] initially false for each node. And then loop through this list at the end to get the APs.
 ![AP](https://user-images.githubusercontent.com/51331982/209201901-b2ec169d-f36f-490a-aea5-89514c6dcb2d.png)
 
+### Bridges in a graph
+
+Same as articulation points, even simpler code
+
+Steps:
+
+1. Maintain parent, disc, low, timer, no visited set needed just like above
+2. Do same as above. In helper, for each node, low, disc and timer updation
+3. For each neighbor of current, check if undiscovered, if yes, then update parent array par[nei] = cur and recurse.
+4. After recursion statement, do low[cur] = min(low[cur], low[nei]) just like before for backtracking.
+5. Check if low[nei] > disc[cur] (backedges). If condition satisfies, we have a bridge in currentNode->neighbor. So append this pair in outputlist
+(Same logic why we used this inequality as before. While backtracking, we check this if condition. If the low val of neighbor is smaller than disc val of current, it means that the neighbor at some point had a backedge to one of ancestors of current, hence the smaller value obtained. So that means there is an alternate path to the component even if we remove the current edge)
+6. In main elif, check neig!=parent[cur], as it means we do not want to handle the immediate parent case (undirected graph). If neighbor is an immediate parent of currentNode, then we drop that iteration and move on to the next one (ignore it basically).
+DO same low[cur] = min(low[cur], disc[neigh]) if condition satisfies. Below is the dry run eg.
+![Bridges](https://user-images.githubusercontent.com/51331982/209217639-ee82f9ef-bca0-4824-8107-ada4dd1fbacc.png)
