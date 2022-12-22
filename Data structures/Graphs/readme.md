@@ -44,3 +44,6 @@ Steps to find APs
 7. Second case: if currentNode is not root, and low[neighbor] >= disc[currentNode], it will be an AP. Meaning: we check for any backedges from subgraph v of u, towards ancestor of u. If there is one, that would mean the low value of neighbor will modify to something lower than disc value of its parent, hence the no. of components will not increase in that case, so to avoid backedge, the inequality is given. Append in APList if true
 8. In elif statement (same level as the first "if" check for undiscovered neighbor), check if theres no backedge from parent to neighbor. If neighbor happens to be immediate parent of currentNode, then we ignore that case because we assume to be removing the currentNode for checking AP. So the backedge to parent actually doesnt exist at the moment. So on true, do same as tarjansSCC point 6.
 9. Return APList from main program.
+10. Note: There can be duplicates in APList, since after backtracking from curr's children, it can hit the if statements again, like in the example given below. So use a set instead of APList. Or perhaps even better: Keep an AP boolean list = [F F F F ...] initially false for each node. And then loop through this list at the end to get the APs.
+![AP](https://user-images.githubusercontent.com/51331982/209201901-b2ec169d-f36f-490a-aea5-89514c6dcb2d.png)
+
