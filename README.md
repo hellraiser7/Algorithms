@@ -320,3 +320,12 @@ Problems solved (updated everyday ... kinda)
   - ![Graph Theory](https://user-images.githubusercontent.com/51331982/208521114-c81d073d-22dd-41b9-ab2e-fe566b970d4e.png)
 TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, also the visted array taken in first approach
   
+### 35. Graph Valid Tree - Lintcode 178
+  - Premium
+  - Indirectly we must calculate how to find a cycle in an undirected graph
+  - Follow this program to revise the above concept.
+  - Make adjacency list from the edges list given. Then create DFS_util(current, prev) inside main function so that we dont need to pass visited set in the function
+  - loop through currentNode's neighbors. If any neighbor === prev, we have a backedge that we need to ignore, else it gives us a false positive on detection of a cycle, so continue with next itr
+  - In false case, if not DFS_util(neigh, cur), return False, and at the end of func, return True
+  - If null graph, return True
+  - TC: O(v+e) SC: O(v+e)
