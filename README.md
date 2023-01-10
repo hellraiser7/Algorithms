@@ -329,3 +329,19 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - In false case, if not DFS_util(neigh, cur), return False, and at the end of func, return True
   - If null graph, return True
   - TC: O(v+e) SC: O(v+e)
+
+### 36. Alien Dictionary - Leetcode Prem 269
+  - A topological sort problem
+  - Make the graph from one character to another. For e.g.: S = wert, T = wertff, so whenever we get the first differing letter after comparing a pair of strings word[i] and word[i+1] till its prefix (here, it is "wert"), the first letter thats different: t and f giving the connection t ---> f
+  - t comes before f here, so make the connection in that way.
+  - Similarly make the connection for each pair like this, giving way to number of graphs (could be connected or not).
+  - If the input is invalid, such as in the words array, "abcd" comes before "abc", return "", also if there is a cycle in any graph, return null "" since we cannot order the letters such that any solution is possible. For e.g.: words = ["wee","abb", "waa"] , here w comes before a in the alien lang, but also a comes before w if we look at the last two words. This is invalid. So return ""
+  - Step 1: Make the adjacency list for each character as a key in a defaultdict
+  - Step 2: Create the graph, 
+      i. considering the null case if prefix_s == prefix_t and len(s) > len(t), then return "".
+      ii. Once we handle the above case, run a for loop inside tha main one, find the first differing character in S and T (if S[j] != T[j]) inside for j in range(min(len(s),len(t)))
+      iii. fill the adjacency list and break
+  - Step 3: Topological sort using DFS. DFS_UTIL returns True or False (found/not found cycle)
+        - If cycle found, after DFS_Util func, run another loop for every character in adjacencylist, and if DFS_util(char), then return "", since we have an invalid input
+  - Step 4: Reverse the finishtTimes stack and convert list into a string by "".join(finishTimes)
+  
