@@ -39,6 +39,7 @@ class Solution:
                     return True # cycle found
             finishTimes.append(character)
             visited[character] = False
+            return False
         
         for character in adjacencyList:
             if DFS_Util(character):
