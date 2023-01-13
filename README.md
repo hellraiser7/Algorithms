@@ -344,4 +344,15 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - Step 3: Topological sort using DFS. DFS_UTIL returns True or False (found/not found cycle)
         - If cycle found, after DFS_Util func, run another loop for every character in adjacencylist, and if DFS_util(char), then return "", since we have an invalid input
   - Step 4: Reverse the finishtTimes stack and convert list into a string by "".join(finishTimes)
-  
+
+### 37. House Robber - Leetcode 198
+  - 1D DP
+  - At each house, ask a question: include the current house in the maximize money solution or not
+  - If you include current house, we add the current house money to the max money obtained at position 2 houses back or arr[i-2], and not including gives us the max money inside house preceeding current arr[i-1]
+  - So take max of both: arr[i] = max(nums[i] + arr[i-2],arr[i-1]), ofcourse you'd have to initialize the first two arr values of the result arr as [nums[0],max(nums[:2]] 
+  - This is TC: O(n), SC: O(n)
+  - Since we need to track only two values: one house preceeding, two houses preceeding current, we can use two pointer variables rob2, rob1, which indicate maxMoney at house 2 houses before current, and the house adjacent to current
+  - Keep shifting pointers after calculating max(nums[i] + rob2,rob1) = current, and return current at the end
+  - TC: O(n), SC: O(1)
+
+###
