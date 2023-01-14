@@ -355,4 +355,9 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - Keep shifting pointers after calculating max(nums[i] + rob2,rob1) = current, and return current at the end
   - TC: O(n), SC: O(1)
 
-###
+### 38. House Robber - Leetcode 213
+  - 1D DP
+  - Same as house robber 1, just one difference
+  - Apply house robber 1 algorithm on all elements except the last one, and then apply house robber on all elements except first, then take max of those
+  - Since the houses are in a circular street, so eliminating last house and then the first one, will get us the necessary cases.
+  - Same TC and SC as HR1
