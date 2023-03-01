@@ -361,3 +361,10 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - Apply house robber 1 algorithm on all elements except the last one, and then apply house robber on all elements except first, then take max of those
   - Since the houses are in a circular street, so eliminating last house and then the first one, will get us the necessary cases.
   - Same TC and SC as HR1
+
+### 39. Palindromic Substrings - Leetcode 647
+  - It initializes a counter variable count to 0.
+- It defines a helper function countPalindromes that takes a string s, and two indices left and right as input, and returns the number of palindromes that can be formed by expanding around the character at the left index and the character at the right index.
+- It loops over each character in the string s, and for each character, it counts the number of palindromes that can be formed by expanding around that character, both for odd-length palindromes (with the character at the center) and even-length palindromes (with adjacent characters at the center).
+- It adds the count of palindromes for each character to the count variable.
+- Finally, it returns the count variable.
