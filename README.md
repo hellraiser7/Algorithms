@@ -368,3 +368,4 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
 - It loops over each character in the string s, and for each character, it counts the number of palindromes that can be formed by expanding around that character, both for odd-length palindromes (with the character at the center) and even-length palindromes (with adjacent characters at the center).
 - It adds the count of palindromes for each character to the count variable.
 - Finally, it returns the count variable.
+- TC: O(n^2), SC: O(1)
