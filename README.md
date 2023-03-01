@@ -369,3 +369,13 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
 - It adds the count of palindromes for each character to the count variable.
 - Finally, it returns the count variable.
 - TC: O(n^2), SC: O(1)
+
+### 40. Decode Ways - Leetcode 91
+ - At each digit, we can take single digit or double. If double, we can only take 10-19 (first digit if 1, can take all in the second digit) and 20-26 (if first digit is 2, second digit between 0 and 6 is valid only)
+ - function dp(i) where i is the index of the input char
+ - base: if i == len(s) return 1 since we traversed through entire string and found one way to decode (single digits all of them), result = 0
+ - then for single digit, do if (s[i]!='0'): res += dp(i+1) recursion for the next digit
+ - Next backtracking step, check for double digit group validity with checks of number 10-19 and 20-26. If valid group of s[i:i+1], then recurse for the pair, res+=dp(i+2) and return res
+ - call dp(0) in main program
+ - TC: O(n) SC: O(n)
+ - Can use Bottom up approach as well using dp array, even O(1) SC since we need only three values
