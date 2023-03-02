@@ -380,3 +380,8 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
  - TC: O(n) SC: O(n)
  - Can use Bottom up approach as well using dp array, even O(1) SC since we need only three values
 - For ref: https://leetcode.com/problems/decode-ways/solutions/1410794/c-python-from-top-down-dp-to-bottom-up-dp-o-1-space-clean-concise/
+### 41. Coin Change - Leetcode 322
+ - Why greedy doesn't work? If we take [1,2,3,4,5] as the coin array and amount = 7, from greedy, we get 5,1,1 i.e., 3 coins. Whereas the most optimal solution is 2 coins that is 4,3. Hence we need to calculate all paths from the amount like a DFS, then evaluate which path is the shortest.
+ - Create the graph from amount, branching to all coins, in this case five children, then it becomes a smaller subproblem
+ - O(amount*len(coins)) TC
+ 
