@@ -406,3 +406,11 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - break if dp[i] is true, since we already got a matching word in dict
   - answer is in dp[0] which means a string starting at 0, and ending at end (whole string), so return it
   - TC: O(n^2m) where n = len(s) and m = len(wordDict), it is lesser than O(n^3) since m<<n. SC:O(n)
+
+### 44. Longest Increasing Subsequence - Leetcode 300
+  - Brute Force - 2^n solution as we make a decision on each element to include or not to include (2 ways for each element)
+  - DP: End to beginning of nums, we need LIS[] keeping track of LIS starting at each element
+  - Start at penultimate for i in range(len(nums)-1,-1,-1), then have another loop that goes for j from i+1 to len(nums)
+  - Make a decision to include the current j in LIS or not. If nums[j]>nums[i], then only update LIS[i] = max(LIS[i],1+LIS[j]). 1+LIS[j] means that we have included the current number and the next subproblem which has already been calculated.
+  - Can also start from beginning of array.
+  - TC: O(n^2), SC: O(n). O(nlogn) solution is tricky.
