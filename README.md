@@ -397,4 +397,12 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - TC: O(n) SC: O(1)
  ![image](https://user-images.githubusercontent.com/51331982/222649564-f7e2cf25-5d12-4110-9467-c6fd89f27192.png)
 
- 
+ ### 43. Word Break - Leetcode 139
+  - Brute force, can check for each letter in string whether it is contained inside wordDict. Partition the word at each letter and make a backtracking decision tree (2^n)
+  - Optimized way: End of string to beginning, create branches wrt elements in the list ["code" , "leet", "neet"], will have three children from each node (3 decisions). For each i, check if starting at that i, can we make any of those words in the wordDict.
+  - So for s = "neetcode", start at "e" or end. DP = [False]*len(s)+1, and dp[len(s) = True, which means that the string starting at the end (empty string) is always inside the dict, so True.
+  - loop through backwards in s, then loop through words in wordDict. Check if i+len(word)<=len(s) in order to make sure the characters that we'll consider wont go out of bounds, and then check if the element at i to the word length is equal to the word (s[i:i+len(w)]==w)
+  - If yes, update the cache table to be true,  dp[i] = dp[i+len(w)]. For first match in dict, we get dp[4] = dp[4+4] = dp[8] = True, always get a dp[len(s) for first happy path. dp[i] will update to true as i+len(w) will have a true value from the iteration done before this where we get a matching word. 
+  - break if dp[i] is true, since we already got a matching word in dict
+  - answer is in dp[0] which means a string starting at 0, and ending at end (whole string), so return it
+  - TC: O(n^2m) where n = len(s) and m = len(wordDict), it is lesser than O(n^3) since m<<n. SC:O(n)
