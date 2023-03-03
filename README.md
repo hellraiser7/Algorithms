@@ -395,4 +395,6 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - Edge case of a zero in the array is also covered here. If a zero is encountered, our product is killed, so the currentMax*num and currentMin*num = 0 as num = 0, but when we go to next element, num may/may not be 0 again, so the currentMax value gets pulled up to num if a +ve no. is encountered, and vice versa for curMin. So we cover it by including num in the max and min operation
   - res = max(res,curMax) and then exit from loop and ret res
   - TC: O(n) SC: O(1)
+ ![image](https://user-images.githubusercontent.com/51331982/222649564-f7e2cf25-5d12-4110-9467-c6fd89f27192.png)
+
  
