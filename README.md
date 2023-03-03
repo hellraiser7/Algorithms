@@ -384,4 +384,15 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
  - Why greedy doesn't work? If we take [1,2,3,4,5] as the coin array and amount = 7, from greedy, we get 5,1,1 i.e., 3 coins. Whereas the most optimal solution is 2 coins that is 4,3. Hence we need to calculate all paths from the amount like a DFS, then evaluate which path is the shortest.
  - Create the graph from amount, branching to all coins, in this case five children, then it becomes a smaller subproblem
  - O(amount*len(coins)) TC
+
+### 42. Maximum Product Subarray - Leetcode 152
+  - Use the fact that we need to track both maximum product of elements from first onwards, and the minimum product
+  - For all positive numbers, the max product is the whole array
+  - For negative numbers, things get complicated. We need to keep track of currentMinimum and currentMaximum along the array
+  - We need currentMinimum also because of negative numbers included in the array. A minimum product found before, when multiplied by the current element, could give us a maximum product. Hence to future-proof our product, we need to keep track of minimum
+  - Initialize currentMin and currentMax to the first element, then for num in nums[1:]
+  - currentMax = max(currentMax*num, currentMin*num, num), same for currentMin except it is a min operation
+  - Edge case of a zero in the array is also covered here. If a zero is encountered, our product is killed, so the currentMax*num and currentMin*num = 0 as num = 0, but when we go to next element, num may/may not be 0 again, so the currentMax value gets pulled up to num if a +ve no. is encountered, and vice versa for curMin. So we cover it by including num in the max and min operation
+  - res = max(res,curMax) and then exit from loop and ret res
+  - TC: O(n) SC: O(1)
  
