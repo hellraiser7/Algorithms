@@ -414,3 +414,10 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - Make a decision to include the current j in LIS or not. If nums[j]>nums[i], then only update LIS[i] = max(LIS[i],1+LIS[j]). 1+LIS[j] means that we have included the current number and the next subproblem which has already been calculated.
   - Can also start from beginning of array.
   - TC: O(n^2), SC: O(n). O(nlogn) solution is tricky.
+
+### 45. Unique Paths - Leetcode 62
+  - Brute Force - O(2^mn) due to big recursion tree and recomputation of all values
+  - Use memoization to reduce TC to O(mn) SC O(mn). In base case, return 0 if i >= m or j >= n, return 1 if  i==m-1 and j==n-1
+  - Recursive case: return dfs(i-1,j) + dfs(i,j-1). Use @cache
+  - DP: use DP = [[1]*n for i in range(m)]
+  - Start both loops from (1,1) and do dp[i][j] = dp[i-1][j] + dp[i][j-1] and return dp[m-1][n-1]
