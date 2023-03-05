@@ -441,4 +441,12 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - TC: O(n). SC: O(n). Can do it in O(1) space?
 
 ### 48. Jump Game - Leetcode 55
+  - Brute Force - Calculate every path towards the end of the array
+  - If there's any that leads there, return true.
+  - DP solution is slower than greedy apparently. DP requires linear space and squared time, while greedy can get it done in linear time
+  - Greedy: Have a max_reach variable set to 0. Iterate through nums, if the current index i > max_reach, it will mean that we have strayed ahead of the maximum point that we can reach in the array from start. Hence, we return false there since we cannot reach current index, and since we cannot reach current index, we cannot reach end of the array either.
+  - So if i > max_reach: return false
+  - and else: max_reach = max(max_reach, i + nums[i]) which is the max of current max and jump destination from current
+  - return true outside the loop.
+  - TC: O(n), SC: O(1)
 
