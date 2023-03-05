@@ -421,3 +421,24 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - Recursive case: return dfs(i-1,j) + dfs(i,j-1). Use @cache
   - DP: use DP = [[1]*n for i in range(m)]
   - Start both loops from (1,1) and do dp[i][j] = dp[i-1][j] + dp[i][j-1] and return dp[m-1][n-1]
+
+### 46. Longest Common Subsequence - Leetcode 1143
+  - Brute Force - O(2^mn) because we find all the subsequences and find the max commonality
+  - Optimized - Use recursion with memoization. Have a dictionary dp = {} that memoizes the values so that we don't need to recompute the branches of the recursion tree
+  - base case for recursive function LCS(i,j) where i and j are the letters of str1 and 2 that we need to compete
+  - if (i,j) in dp: return dp[i,j]
+  - if i < 0 or j < 0: it means that either string is empty, so return 0 because we cannot have anything in common with an empty string
+  - if text1[i] == text2[j], then both letters in current iteration (say "a" from "abcde" and "ace"), are equal, so we include that letter in our max common string answer and do dp[i,j] = 1 + LCS(i-1,j-1) because we consider the next letter now
+  - else, we compete: remove one and don't touch the other - get the longest common subs, and remove the other and dont touch the first - get the LCS, i.e. dp[i,j] = max(LCS(i-1,j), LCS(i,j-1))
+  - TC: O(n^2) and SC: O(n)
+
+### 47. Maximum Subarray - Leetcode 53
+  - Brute Force - O(n^2) or O(n^3) which means we go through the array twice
+  - Optimized - ask the question at each array element, shall I include this element in the max sum or not.
+  - If by including the current element, the sum is greater, then only we extend it.
+  - So the formula is : maxArray[i] = max(nums[i], maxArray[i-1] + nums[i])  or max(currentEl, maxSumObtainedBeforeCurrent + currentEl)
+  - return max of maxArray
+  - TC: O(n). SC: O(n). Can do it in O(1) space?
+
+### 48. Jump Game - Leetcode 55
+
