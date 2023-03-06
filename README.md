@@ -450,3 +450,5 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - return true outside the loop.
   - TC: O(n), SC: O(1)
 
+### 49. Intervals - Leetcode 57
+
