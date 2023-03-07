@@ -451,4 +451,11 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - TC: O(n), SC: O(1)
 
 ### 49. Intervals - Leetcode 57
+  - Sorted intervals, declare a bool INSERTED to check whether the merged interval has been inserted in the output or not. We need this to find the right place of the insert 
+  - Loop through all of them and check if the newInterval is overlapping with current one ( end index of new >= start of current interval and start of new <= end of current)
+  - If overlapping, then calculate the new merge the current interval and newInterval, as newInterval = [min(start_i,start_n), max(end_i,end_n)] and continue to next itr
+  - check to see if merged interval already inserted or not. If not inserted, and newInterval start < current start, it means that the newInterval comes before it. So insert that in the output
+  - Then outside this if, append the current interval (if the newInterval lies after, then only this current interval will get appended, if before, then the newInterval gets appended, then outside this if, current one)
+  - Outside for, we have another untouched case where the newInterval lies after all the intervals, so we append it after the output array if not inserted yet.
+  - TC: O(n), SC: O(n)
 
