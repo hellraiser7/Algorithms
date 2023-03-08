@@ -462,4 +462,13 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
 ### 50. Merge Intervals - Leetcode 56
  - First sort it wrt start index intervals.sort(key = lambda x:x[0])
  - Almost same as the above problem
+ - initialize newInterval as first interval, and loop through all intervals starting from index 1
+ - check if overlapping with newInterval, if yes, calculate new merged interval
+ - else, append newInterval to output, make the newInterval as the currentInterval (when its not overlapping, we need to keep switching the pointers)
+ - outside the loop, if the newInterval is equal to the last element of intervals, it means that we still have to append the last one into the output
+ - else, append the newInterval into output and return
+ - Another method: loop through all intervals, and check if output is empty or output[-1][1] < interval[0] (start index of interval is greater, means no overlap), then append interval in output
+ - else: overlap, change the end index (i.e. for [a,b], change b since the sorting has already been done, the only thing that can change is the end element as it gets extended by overlap)
+ - so do, output[-1][1] = max(output[-1][1], interval[1]). So the comparison will be with the most recently appended element in output and the current interval, instead of storing it in newInterval as before.
+ - TC is same (Onlogn), but its cleaner.
 
