@@ -458,4 +458,8 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
   - Then outside this if, append the current interval (if the newInterval lies after, then only this current interval will get appended, if before, then the newInterval gets appended, then outside this if, current one)
   - Outside for, we have another untouched case where the newInterval lies after all the intervals, so we append it after the output array if not inserted yet.
   - TC: O(n), SC: O(n)
+  
+### 50. Merge Intervals - Leetcode 56
+ - First sort it wrt start index intervals.sort(key = lambda x:x[0])
+ - Almost same as the above problem
 
