@@ -472,3 +472,12 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
  - so do, output[-1][1] = max(output[-1][1], interval[1]). So the comparison will be with the most recently appended element in output and the current interval, instead of storing it in newInterval as before.
  - TC is same (Onlogn), but its cleaner.
 
+### 51. Non-overlapping intervals - Leetcode 435
+ - Sort wrt start index, then end index
+ - same as before, we check for overlap, this time we have a output = 0 to track number of removals required
+ - if overlap detected, increment output
+ - Only catch is, we have to update the newInterval to current interval in this overlap case if newInterval[1] > interval[1] which means that the current interval end point is lesser than the newInterval endpoint
+ - We do this in order to ensure that the minimum number of removals is reached.
+ - This is required for big intervals, where they eat everything up after it, so without this check, the output keeps incrementing and removing the upcoming intervals since they will overlap with the big interval always. Changing up newInterval will reduce the chance of overlapping again with the other intervals, and so it keeps the output minimum.
+ - TC: O(nlogn), SC: O(n)
+
