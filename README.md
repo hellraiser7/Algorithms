@@ -487,6 +487,7 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
  - Loop through all intervals, check if heap and heap[0] <= interval[0]: (non empty and the end time of the most recent meeting arriving is smaller than the current meeting start, which means they are nonoverlapping
  - then popfront from the heap, meaning we can use the same meeting room again as it was overlapping with the last one
  - If not overlapping, we just append the current interval end time in the heap (denoting the current number of meeting rooms required)
+ - Works well with normal list as well.
  - TC: O(nlogn) due to sorting, SC: O(n) heapq
 
 
