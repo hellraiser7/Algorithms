@@ -480,4 +480,13 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
  - We do this in order to ensure that the minimum number of removals is reached.
  - This is required for big intervals, where they eat everything up after it, so without this check, the output keeps incrementing and removing the upcoming intervals since they will overlap with the big interval always. Changing up newInterval will reduce the chance of overlapping again with the other intervals, and so it keeps the output minimum.
  - TC: O(nlogn), SC: O(n)
+ 
+### 52. Meeting Rooms 2 - Lintcode 919
+ - Trick is to use heap (a list that can push and pop from front in O(1) opn), to keep track of all the end times of used meeting rooms in order of most recently arrived
+ - sort wrt start indices.
+ - Loop through all intervals, check if heap and heap[0] <= interval[0]: (non empty and the end time of the most recent meeting arriving is smaller than the current meeting start, which means they are nonoverlapping
+ - then popfront from the heap, meaning we can use the same meeting room again as it was overlapping with the last one
+ - If not overlapping, we just append the current interval end time in the heap (denoting the current number of meeting rooms required)
+ - TC: O(nlogn) due to sorting, SC: O(n) heapq
+
 
