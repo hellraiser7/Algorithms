@@ -12,6 +12,18 @@ class Solution:
             heapq.heappush(heap, interval[1])
         
         return len(heap) # the size of the heap corresponds to the number of meeting rooms needed
+    def minMeetingRooms1(self, intervals) -> int:
+        # Using a normal list, now append and push towards back of array
+        intervals = sorted(intervals, key=lambda x: x[0])  # sort intervals by start time
+        rooms = []  # list of current meeting end times
+        
+        for interval in intervals:
+            if rooms and rooms[-1] <= interval[0]:
+                # if the earliest ending meeting ends before the current interval starts, reuse that room
+                rooms.pop()
+            rooms.append(interval[1])  # add the current meeting end time to the list of rooms
+            
+        return len(rooms)
 
 S = Solution()
 print(S.minMeetingRooms([[0,30],[5,10],[15,20],[17,21],[31,33]]))
