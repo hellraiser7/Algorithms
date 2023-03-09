@@ -490,4 +490,7 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
  - Works well with normal list as well.
  - TC: O(nlogn) due to sorting, SC: O(n) heapq
 
-
+### 53. Rotate Image - Leetcode 48
+ - For rotating 90 degrees clockwise, first transpose the image, and reverse each row.
+ - output = reverse(Tr(A))
+ - TC: O(n^2), SC: O(1) since it is rotation in place
