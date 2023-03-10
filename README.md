@@ -497,3 +497,6 @@ TC: O(V+E) SC: O(V+E) due to the rank and parent array taken in Union and Find, 
  - Another approach is to use l,r,top,bottom pointers. topleft moves len -1 places to the right, right moves len-1 places down... and so on. So, we need to have a temporary variable to store the top left element first. Then start shifting from bottom left to topleft, topleft, to topright, and topright to bottomright in the cycle
  - Two loops, a while l<r and for i in range(r-l) since we have only 3 rotations in the outer layer of 4x4 matrix (l=0,r=3, r-l = 3) and this gap shrinks as we move closer to the inner layers.
  - Better to use maths in this thing as the above is a complicated approach to get in an interview.
+
+### 54. Spiral Matrix - Leetcode 54
+ - 
